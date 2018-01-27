@@ -3,12 +3,12 @@ package net.rashack.externalvalues.implementation;
 import net.rashack.externalvalues.External;
 import net.rashack.externalvalues.convert.ExternalConverter;
 
-public class ExternalImpl<T> implements External<T> {
+public class ConcreteExternal<T> implements External<T> {
 	private final ExternalConverter<T> converter;
 	private final String key;
 	private final T defaultValue;
 	
-	public ExternalImpl(ExternalConverter<T> converter, String key, final T defaultValue) {
+	public ConcreteExternal(ExternalConverter<T> converter, String key, final T defaultValue) {
 		this.converter = converter;
 		this.key = key;
 		this.defaultValue = defaultValue;

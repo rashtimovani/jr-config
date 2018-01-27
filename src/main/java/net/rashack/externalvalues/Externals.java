@@ -17,7 +17,7 @@ public final class Externals {
 	 * @throws NoConverterException
 	 *             if provided converter is null.
 	 */
-	public static <T> ConfigureExternal<T> converted(final ExternalConverter<T> converter) throws NoConverterException {
+	public static <T> ConfigureExternal<T> converted(final ExternalConverter<T> converter) {
 		return MANIPULATOR.converted(converter);
 	}
 
@@ -30,8 +30,12 @@ public final class Externals {
 	 *             happens, use {@link #converted(ExternalConverter)} method to
 	 *             configure external instead of this method.
 	 */
-	public static <T> ConfigureExternal<T> typed(final Class<T> type) throws NoConverterException {
+	public static <T> ConfigureExternal<T> typed(final Class<T> type) {
 		return MANIPULATOR.typed(type);
+	}
+
+	public static void readFromValues(ValueProvider provider) {
+
 	}
 
 	private Externals() {}
