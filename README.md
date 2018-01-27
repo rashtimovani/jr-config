@@ -1,7 +1,7 @@
 # jrashack-external-values
 Simple java library for managing configuration values as constants.
 
-## Declare value that is read from external resources like this
+## When you wan't to access value specified in one external resource under some key, just declare variable of type External!
 
 If you need to declare in code variable that accesses to some external value from resources do following:<br />
 `External<Integer> someExternalValue;` 
