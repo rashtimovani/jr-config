@@ -6,11 +6,16 @@ import java.util.concurrent.ConcurrentMap;
 
 import net.rashack.externalvalues.ValueProvider;
 
-public class InMemoryValueProvider implements ValueProvider {
+public class InMemoryValues implements ValueProvider {
 	private final ConcurrentMap<String, String> loadedValues = new ConcurrentHashMap<>();
 
 	@Override
-	public Optional<String> forKey(String key) {
+	public Optional<String> forKey(final String key) {
 		return Optional.of(loadedValues.get(key));
+	}
+
+	public InMemoryValues registerValue(final String key, final String value) {
+		loadedValues.put(key, value);
+		return this;
 	}
 }

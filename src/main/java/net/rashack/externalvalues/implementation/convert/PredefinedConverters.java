@@ -12,7 +12,6 @@ public class PredefinedConverters {
 	private static Map<Class<?>, ExternalConverter<?>> defaults() {
 		final Map<Class<?>, ExternalConverter<?>> defaults = new HashMap<>();
 		defaults.put(Integer.class, new IntegerConverter());
-		defaults.put(int.class, new IntConverter());
 		return defaults;
 	}
 

@@ -10,11 +10,6 @@ import net.rashack.externalvalues.exceptions.NoConverterException;
 public class TestPredefinedConverters {
 
 	@Test
-	public void testIntConverterPredefined() {
-		assertThat(PredefinedConverters.produce().forType(int.class), instanceOf(IntConverter.class));
-	}
-
-	@Test
 	public void testIntegerConverterPredefined() {
 		assertThat(PredefinedConverters.produce().forType(Integer.class), instanceOf(IntegerConverter.class));
 	}

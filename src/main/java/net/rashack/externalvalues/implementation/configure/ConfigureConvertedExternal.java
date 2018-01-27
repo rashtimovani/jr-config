@@ -4,6 +4,7 @@ import java.util.regex.Pattern;
 
 import net.rashack.externalvalues.ConfigureExternal;
 import net.rashack.externalvalues.External;
+import net.rashack.externalvalues.ValueProvider;
 import net.rashack.externalvalues.convert.ExternalConverter;
 import net.rashack.externalvalues.exceptions.ExternalBuiltException;
 import net.rashack.externalvalues.exceptions.InvalidKeyException;
@@ -17,8 +18,11 @@ public class ConfigureConvertedExternal<T> implements ConfigureExternal<T> {
 	private boolean instantiated;
 	private T defaultValue;
 
-	public ConfigureConvertedExternal(final ExternalConverter<T> converter) {
+	private final ValueProvider valueProvider;
+
+	public ConfigureConvertedExternal(final ExternalConverter<T> converter, final ValueProvider valueProvider) {
 		this.converter = converter;
+		this.valueProvider = valueProvider;
 	}
 
 	@Override
@@ -46,6 +50,6 @@ public class ConfigureConvertedExternal<T> implements ConfigureExternal<T> {
 	}
 
 	External<T> instantiateExternal(final ExternalConverter<T> converter, final String key, final T defaultValue) {
-		return new ConcreteExternal<>(converter, key, defaultValue);
+		return new ConcreteExternal<>(converter, valueProvider, key, defaultValue);
 	}
 }

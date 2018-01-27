@@ -22,6 +22,15 @@ public final class Externals {
 	}
 
 	/**
+	 * Sets all created {@link External} object to read external values from
+	 * provided value provided over keys those {@link External} objects are
+	 * associated with.
+	 */
+	public static void readFromValues(final ValueProvider valueProvider) {
+		MANIPULATOR.readFromValues(valueProvider);
+	}
+
+	/**
 	 * Provides ways to configure {@link External} variable that will provide
 	 * values of T type.
 	 *
@@ -32,10 +41,6 @@ public final class Externals {
 	 */
 	public static <T> ConfigureExternal<T> typed(final Class<T> type) {
 		return MANIPULATOR.typed(type);
-	}
-
-	public static void readFromValues(ValueProvider provider) {
-
 	}
 
 	private Externals() {}
