@@ -2,13 +2,13 @@ package net.rashack.externalvalues.implementation;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.core.IsNull.nullValue;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.mock;
 
 import java.util.Optional;
 
-import org.hamcrest.core.IsNull;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -51,6 +51,14 @@ public class TestConcreteExternal {
 	public void testNoValue() {
 		doReturn(Optional.empty()).when(valueProvider).forKey(eq("noValue"));
 
-		assertThat(new ConcreteExternal<>(converter, valueProvider, "noValue", null).value(), IsNull.nullValue());
+		assertThat(new ConcreteExternal<>(converter, valueProvider, "noValue", null).value(), nullValue());
+	}
+
+	@Test
+	public void testNullValueFromConvereterReturnsDefaultValue() {
+		converter = value -> null;
+		doReturn(Optional.of("")).when(valueProvider).forKey(eq("nullValue"));
+
+		assertThat(new ConcreteExternal<>(converter, valueProvider, "noValue", 42).value(), equalTo(42));
 	}
 }

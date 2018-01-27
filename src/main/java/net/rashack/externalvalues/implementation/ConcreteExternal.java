@@ -12,7 +12,7 @@ public class ConcreteExternal<T> implements External<T> {
 	private final String key;
 	private final T defaultValue;
 
-	public ConcreteExternal(ExternalConverter<T> converter, final ValueProvider valueProvider, String key,
+	public ConcreteExternal(final ExternalConverter<T> converter, final ValueProvider valueProvider, final String key,
 			final T defaultValue) {
 		this.converter = converter;
 		this.valueProvider = valueProvider;
@@ -24,7 +24,10 @@ public class ConcreteExternal<T> implements External<T> {
 	public T value() {
 		final Optional<String> valueFromResource = valueProvider.forKey(key);
 		if (valueFromResource.isPresent()) {
-			return converter.convert(valueFromResource.get());
+			final T converted = converter.convert(valueFromResource.get());
+			if (converted != null) {
+				return converted;
+			}
 		}
 		return defaultValue;
 	}
