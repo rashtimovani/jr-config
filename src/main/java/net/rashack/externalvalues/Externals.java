@@ -8,7 +8,7 @@ import net.rashack.externalvalues.implementation.ManipulateExternals;
  * Entry point class for handling with {@link External} values.
  */
 public final class Externals {
-	private static final ManipulateExternals MANIPULATOR = ManipulateExternals.produce();
+	private static final Externals INSTANCE = new Externals();
 
 	/**
 	 * Provides ways to configure {@link External} variable with custom
@@ -18,7 +18,7 @@ public final class Externals {
 	 *             if provided converter is null.
 	 */
 	public static <T> ConfigureExternal<T> converted(final ExternalConverter<T> converter) {
-		return MANIPULATOR.converted(converter);
+		return INSTANCE.manipulateExternals.converted(converter);
 	}
 
 	/**
@@ -27,7 +27,7 @@ public final class Externals {
 	 * associated with.
 	 */
 	public static void readFromValues(final ValueProvider valueProvider) {
-		MANIPULATOR.readFromValues(valueProvider);
+		INSTANCE.manipulateExternals.readFromValues(valueProvider);
 	}
 
 	/**
@@ -40,8 +40,10 @@ public final class Externals {
 	 *             configure external instead of this method.
 	 */
 	public static <T> ConfigureExternal<T> typed(final Class<T> type) {
-		return MANIPULATOR.typed(type);
+		return INSTANCE.manipulateExternals.typed(type);
 	}
+
+	private final ManipulateExternals manipulateExternals = ManipulateExternals.produce();
 
 	private Externals() {}
 }
