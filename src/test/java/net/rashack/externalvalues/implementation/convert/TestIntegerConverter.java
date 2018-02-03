@@ -30,16 +30,6 @@ public class TestIntegerConverter {
 	}
 
 	@Test
-	public void testTrimAfterInvalidValues() {
-		assertThat(new IntegerConverter().convert("22 "), equalTo(22));
-	}
-
-	@Test
-	public void testTrimBeforeInvalidValues() {
-		assertThat(new IntegerConverter().convert(" 22"), equalTo(22));
-	}
-
-	@Test
 	public void testEmptyValueConvertsToNull() {
 		assertThat(new IntegerConverter().convert(""), nullValue());
 	}
