@@ -11,12 +11,16 @@ import net.rashack.externalvalues.exceptions.NoConverterException;
 public class PredefinedConverters {
 	private static Map<Class<?>, ExternalConverter<?>> defaults() {
 		final Map<Class<?>, ExternalConverter<?>> defaults = new HashMap<>();
+
+		defaults.put(Byte.class, new ByteConverter());
+		defaults.put(byte.class, new PrimitiveByteConverter());
 		defaults.put(Short.class, new ShortConverter());
 		defaults.put(short.class, new PrimitiveShortConverter());
 		defaults.put(Integer.class, new IntegerConverter());
 		defaults.put(int.class, new PrimitiveIntConverter());
 		defaults.put(Long.class, new LongConverter());
 		defaults.put(long.class, new PrimitiveLongConverter());
+
 		return defaults;
 	}
 
