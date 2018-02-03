@@ -23,11 +23,16 @@ public final class Externals {
 
 	/**
 	 * Sets all created {@link External} object to read external values from
-	 * provided value provided over keys those {@link External} objects are
-	 * associated with.
+	 * specified providers. Providers are specified in form of URI:
+	 * type://specific/values/for/each/provider.
+	 * Last specified provider definition in list will have
 	 */
-	public static void readFromValues(final ValueProvider valueProvider) {
-		INSTANCE.manipulateExternals.readFromValues(valueProvider);
+	public static void readFromValues(final String... providerDefinitions) {
+		INSTANCE.manipulateExternals.readFromValues(providerDefinitions);
+	}
+
+	public static void registerValueProvider(final String providerType, final ValueProviderFactory providerFactory) {
+		INSTANCE.manipulateExternals.registerValueProvider(providerType, providerFactory);
 	}
 
 	/**

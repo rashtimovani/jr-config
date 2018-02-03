@@ -3,7 +3,8 @@ package net.rashack.externalvalues.implementation.values;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 
-import java.io.File;
+import java.net.URI;
+import java.net.URISyntaxException;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -14,10 +15,10 @@ public class TestPropertiesProvider {
 	private static PropertiesProvider properties;
 
 	@BeforeClass
-	public static void setUp() {
+	public static void setUp() throws URISyntaxException {
 		final ClassLoader classLoader = TestPropertiesProvider.class.getClassLoader();
-		final String propertiesFile = classLoader.getResource("TestProperties.properties").getFile();
-		properties = new PropertiesProvider(new File(propertiesFile));
+		final URI propertiesFileURI = classLoader.getResource("TestProperties.properties").toURI();
+		properties = new PropertiesProvider(propertiesFileURI);
 	}
 
 	@Test
@@ -27,12 +28,7 @@ public class TestPropertiesProvider {
 
 	@Test(expected = InvalidValueProviderException.class)
 	public void testInvalidPropertiesFile() {
-		new PropertiesProvider(new File("unknonwFile"));
-	}
-
-	@Test(expected = InvalidValueProviderException.class)
-	public void testDirectoryPropertiesFile() {
-		new PropertiesProvider(new File("src"));
+		new PropertiesProvider(URI.create("properties://unknonwFile"));
 	}
 
 	@Test
