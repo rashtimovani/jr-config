@@ -10,14 +10,14 @@ import java.util.Optional;
 import java.util.concurrent.atomic.AtomicReference;
 
 import net.rashack.externalvalues.ConfigureExternal;
-import net.rashack.externalvalues.ValueProvider;
-import net.rashack.externalvalues.ValueProviderFactory;
 import net.rashack.externalvalues.convert.ExternalConverter;
 import net.rashack.externalvalues.exceptions.InvalidValueProviderException;
 import net.rashack.externalvalues.exceptions.NoConverterException;
 import net.rashack.externalvalues.implementation.configure.ConfigureConvertedExternal;
 import net.rashack.externalvalues.implementation.convert.PredefinedConverters;
 import net.rashack.externalvalues.implementation.values.ValueProviders;
+import net.rashack.externalvalues.provider.ValueProvider;
+import net.rashack.externalvalues.provider.ValueProviderFactory;
 
 public final class ManipulateExternals {
 	private class ValueProviderProxy implements ValueProvider {

@@ -6,9 +6,9 @@ import java.net.URI;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
-import net.rashack.externalvalues.ValueProvider;
-import net.rashack.externalvalues.ValueProviderFactory;
 import net.rashack.externalvalues.exceptions.InvalidValueProviderException;
+import net.rashack.externalvalues.provider.ValueProvider;
+import net.rashack.externalvalues.provider.ValueProviderFactory;
 
 public class ValueProviders {
 

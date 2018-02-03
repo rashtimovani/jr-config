@@ -12,8 +12,8 @@ import java.util.Optional;
 import org.junit.Before;
 import org.junit.Test;
 
-import net.rashack.externalvalues.ValueProvider;
 import net.rashack.externalvalues.convert.ExternalConverter;
+import net.rashack.externalvalues.provider.ValueProvider;
 
 public class TestConcreteExternal {
 

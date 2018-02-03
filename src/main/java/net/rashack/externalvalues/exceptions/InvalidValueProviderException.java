@@ -1,5 +1,9 @@
 package net.rashack.externalvalues.exceptions;
 
+/**
+ * Invalid value provider exception is thrown whenever there's a problem with
+ * instantiating value providers.
+ */
 public class InvalidValueProviderException extends ExternalValueException {
 	private static final long serialVersionUID = -3751592200000378003L;
 

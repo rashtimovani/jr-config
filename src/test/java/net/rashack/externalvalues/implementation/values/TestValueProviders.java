@@ -7,8 +7,8 @@ import java.net.URI;
 
 import org.junit.Test;
 
-import net.rashack.externalvalues.ValueProvider;
 import net.rashack.externalvalues.exceptions.InvalidValueProviderException;
+import net.rashack.externalvalues.provider.ValueProvider;
 
 public class TestValueProviders {
 

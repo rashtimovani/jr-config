@@ -3,8 +3,8 @@ package net.rashack.externalvalues.implementation;
 import java.util.Optional;
 
 import net.rashack.externalvalues.External;
-import net.rashack.externalvalues.ValueProvider;
 import net.rashack.externalvalues.convert.ExternalConverter;
+import net.rashack.externalvalues.provider.ValueProvider;
 
 public class ConcreteExternal<T> implements External<T> {
 	private final ExternalConverter<T> converter;

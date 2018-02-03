@@ -11,10 +11,10 @@ import org.junit.runner.RunWith;
 
 import junitparams.JUnitParamsRunner;
 import junitparams.Parameters;
-import net.rashack.externalvalues.ValueProvider;
 import net.rashack.externalvalues.convert.ExternalConverter;
 import net.rashack.externalvalues.exceptions.ExternalBuiltException;
 import net.rashack.externalvalues.exceptions.InvalidKeyException;
+import net.rashack.externalvalues.provider.ValueProvider;
 
 @RunWith(JUnitParamsRunner.class)
 public class TestConfigureConvertedExternal {

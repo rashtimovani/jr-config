@@ -4,11 +4,11 @@ import java.util.regex.Pattern;
 
 import net.rashack.externalvalues.ConfigureExternal;
 import net.rashack.externalvalues.External;
-import net.rashack.externalvalues.ValueProvider;
 import net.rashack.externalvalues.convert.ExternalConverter;
 import net.rashack.externalvalues.exceptions.ExternalBuiltException;
 import net.rashack.externalvalues.exceptions.InvalidKeyException;
 import net.rashack.externalvalues.implementation.ConcreteExternal;
+import net.rashack.externalvalues.provider.ValueProvider;
 
 public class ConfigureConvertedExternal<T> implements ConfigureExternal<T> {
 	private static final Pattern WHITESPACE_PATTERN = Pattern.compile("\\s+");

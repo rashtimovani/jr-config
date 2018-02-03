@@ -18,7 +18,7 @@ public class TestExternals {
 				.registerValue("inMemoryExternal", Integer.toString(333));
 		Externals.registerValueProvider("inMemory", uri -> values);
 
-		Externals.readFromValues("properties://src/test/resources/TestProperties.properties", "inMemory://test");
+		Externals.readFrom("properties://src/test/resources/TestProperties.properties", "inMemory://test");
 	}
 
 	@Test

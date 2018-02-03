@@ -10,8 +10,8 @@ import java.net.URI;
 import java.util.Optional;
 import java.util.Properties;
 
-import net.rashack.externalvalues.ValueProvider;
 import net.rashack.externalvalues.exceptions.InvalidValueProviderException;
+import net.rashack.externalvalues.provider.ValueProvider;
 
 public class PropertiesProvider implements ValueProvider {
 

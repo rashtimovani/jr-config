@@ -4,7 +4,7 @@ import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
-import net.rashack.externalvalues.ValueProvider;
+import net.rashack.externalvalues.provider.ValueProvider;
 
 public class InMemoryProvider implements ValueProvider {
 	private final ConcurrentMap<String, String> loadedValues = new ConcurrentHashMap<>();

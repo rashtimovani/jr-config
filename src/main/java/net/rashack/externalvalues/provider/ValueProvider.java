@@ -1,4 +1,4 @@
-package net.rashack.externalvalues;
+package net.rashack.externalvalues.provider;
 
 import java.util.Optional;
 
