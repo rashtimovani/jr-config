@@ -55,10 +55,10 @@ public class TestConcreteExternal {
 	}
 
 	@Test
-	public void testNullValueFromConvereterReturnsDefaultValue() {
+	public void testNullValueFromConvereter() {
 		converter = value -> null;
 		doReturn(Optional.of("")).when(valueProvider).forKey(eq("nullValue"));
 
-		assertThat(new ConcreteExternal<>(converter, valueProvider, "noValue", 42).value(), equalTo(42));
+		assertThat(new ConcreteExternal<>(converter, valueProvider, "nullValue", 42).value(), nullValue());
 	}
 }

@@ -16,13 +16,13 @@ import junitparams.JUnitParamsRunner;
 public class TestIntLikeConverter {
 
 	@Test
-	public void testConvertingBinarFormat() {
+	public void testConvertingBinaryFormat() {
 		final IntegerLikeConverter<?> converter = spy(IntegerLikeConverter.class);
 
 		converter.convert("0b00101010");
 
 		verify(converter, times(0)).defaultValue();
-		verify(converter, times(1)).valueOf(eq("1111"), eq(2));
+		verify(converter, times(1)).valueOf(eq("00101010"), eq(2));
 	}
 
 	@Test

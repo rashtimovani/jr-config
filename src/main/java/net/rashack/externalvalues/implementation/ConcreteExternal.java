@@ -24,10 +24,7 @@ public class ConcreteExternal<T> implements External<T> {
 	public T value() {
 		final Optional<String> valueFromResource = valueProvider.forKey(key);
 		if (valueFromResource.isPresent()) {
-			final T converted = converter.convert(valueFromResource.get());
-			if (converted != null) {
-				return converted;
-			}
+			return converter.convert(valueFromResource.get());
 		}
 		return defaultValue;
 	}
