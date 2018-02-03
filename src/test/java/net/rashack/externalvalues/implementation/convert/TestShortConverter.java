@@ -17,7 +17,7 @@ public class TestShortConverter {
 			"42|42", "0x10|16", "-4343|-4343", "32767|32767", "-32768|-32768", "0|0", "0b1111|15"
 	})
 	@Test
-	public void testConvertingIntegers(final String valueFromResource, final short value) {
+	public void testConvertingValidValues(final String valueFromResource, final short value) {
 		assertThat(new ShortConverter().convert(valueFromResource), equalTo(value));
 	}
 

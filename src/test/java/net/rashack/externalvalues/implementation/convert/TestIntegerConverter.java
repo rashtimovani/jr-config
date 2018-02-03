@@ -17,7 +17,7 @@ public class TestIntegerConverter {
 			"42|42", "0x10|16", "-4343|-4343", "2000222000|2000222000", "0|0", "0b1111|15"
 	})
 	@Test
-	public void testConvertingIntegers(final String valueFromResource, final int value) {
+	public void testConvertingValidValues(final String valueFromResource, final int value) {
 		assertThat(new IntegerConverter().convert(valueFromResource), equalTo(value));
 	}
 

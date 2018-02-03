@@ -15,8 +15,18 @@ public class TestPredefinedConverters {
 	}
 
 	@Test
+	public void testLongConverterPredefined() {
+		assertThat(PredefinedConverters.produce().forType(Long.class), instanceOf(LongConverter.class));
+	}
+
+	@Test
 	public void testPrimitiveIntConverterPredefined() {
 		assertThat(PredefinedConverters.produce().forType(int.class), instanceOf(PrimitiveIntConverter.class));
+	}
+
+	@Test
+	public void testPrimitiveLongConverterPredefined() {
+		assertThat(PredefinedConverters.produce().forType(long.class), instanceOf(PrimitiveLongConverter.class));
 	}
 
 	@Test
