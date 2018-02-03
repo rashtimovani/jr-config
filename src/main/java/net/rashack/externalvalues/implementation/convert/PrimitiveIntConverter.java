@@ -1,6 +1,6 @@
 package net.rashack.externalvalues.implementation.convert;
 
-public class IntConverter extends IntegerConverter {
+public class PrimitiveIntConverter extends IntegerConverter {
 
 	@Override
 	Integer defaultValue() {

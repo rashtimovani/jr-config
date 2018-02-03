@@ -9,10 +9,10 @@ import org.junit.runner.RunWith;
 import junitparams.JUnitParamsRunner;
 
 @RunWith(JUnitParamsRunner.class)
-public class TestIntConverter {
+public class TestPrimitiveShortConverter {
 
 	@Test
 	public void testEmptyValueConvertsToZero() {
-		assertThat(new IntConverter().convert(""), equalTo(0));
+		assertThat(new PrimitiveShortConverter().convert(""), equalTo((short) 0));
 	}
 }

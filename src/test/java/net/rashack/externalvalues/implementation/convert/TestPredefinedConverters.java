@@ -10,13 +10,23 @@ import net.rashack.externalvalues.exceptions.NoConverterException;
 public class TestPredefinedConverters {
 
 	@Test
-	public void testIntConverterPredefined() {
-		assertThat(PredefinedConverters.produce().forType(int.class), instanceOf(IntConverter.class));
+	public void testIntegerConverterPredefined() {
+		assertThat(PredefinedConverters.produce().forType(Integer.class), instanceOf(IntegerConverter.class));
 	}
 
 	@Test
-	public void testIntegerConverterPredefined() {
-		assertThat(PredefinedConverters.produce().forType(Integer.class), instanceOf(IntegerConverter.class));
+	public void testPrimitiveIntConverterPredefined() {
+		assertThat(PredefinedConverters.produce().forType(int.class), instanceOf(PrimitiveIntConverter.class));
+	}
+
+	@Test
+	public void testPrimitiveShortConverterPredefined() {
+		assertThat(PredefinedConverters.produce().forType(short.class), instanceOf(PrimitiveShortConverter.class));
+	}
+
+	@Test
+	public void testShortConverterPredefined() {
+		assertThat(PredefinedConverters.produce().forType(Short.class), instanceOf(ShortConverter.class));
 	}
 
 	@Test(expected = NoConverterException.class)
