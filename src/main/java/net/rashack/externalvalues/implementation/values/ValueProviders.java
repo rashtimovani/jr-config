@@ -25,12 +25,12 @@ public class ValueProviders {
 	}
 
 	public ValueProvider forURI(final URI uri) {
-		final ValueProviderFactory externalConverter = providerFactories.get(uri.getScheme());
-		if (externalConverter == null) {
+		final ValueProviderFactory factory = providerFactories.get(uri.getScheme());
+		if (factory == null) {
 			throw new InvalidValueProviderException(
 					"There's no value provider of type: " + uri.getScheme() + "\n" + this);
 		}
-		return externalConverter.forURI(uri);
+		return factory.forURI(uri);
 	}
 
 	public void registerValueProvider(final String providerType, final ValueProviderFactory providerFactory) {
