@@ -9,4 +9,8 @@ public class ExternalValueException extends RuntimeException {
 	public ExternalValueException(final String message) {
 		super(message);
 	}
+
+	public ExternalValueException(final String message, final Throwable cause) {
+		super(message, cause);
+	}
 }
