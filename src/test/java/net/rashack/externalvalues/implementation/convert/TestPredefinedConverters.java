@@ -30,6 +30,11 @@ public class TestPredefinedConverters {
 	}
 
 	@Test
+	public void testEnumConverterPredefined() {
+		assertThat(PredefinedConverters.produce().forType(SomeTestEnum.class), instanceOf(EnumConverter.class));
+	}
+
+	@Test
 	public void testFloatConverterPredefined() {
 		assertThat(PredefinedConverters.produce().forType(Float.class), instanceOf(FloatConverter.class));
 	}

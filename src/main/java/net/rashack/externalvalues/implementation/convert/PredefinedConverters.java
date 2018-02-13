@@ -47,8 +47,14 @@ public class PredefinedConverters {
 		this.converters = unmodifiableMap(converters);
 	}
 
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings({
+			"unchecked", "rawtypes"
+	})
 	public <T> ExternalConverter<T> forType(final Class<T> type) {
+		if (Enum.class.isAssignableFrom(type)) {
+			return new EnumConverter(type);
+		}
+
 		final ExternalConverter<?> externalConverter = converters.get(type);
 		if (externalConverter == null) {
 			throw new NoConverterException(
