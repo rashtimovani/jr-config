@@ -26,6 +26,8 @@ public class PredefinedConverters {
 
 		defaults.put(Float.class, new FloatConverter());
 		defaults.put(float.class, new PrimitiveFloatConverter());
+		defaults.put(Double.class, new DoubleConverter());
+		defaults.put(double.class, new PrimitiveDoubleConverter());
 
 		defaults.put(Character.class, new CharacterConverter());
 		defaults.put(char.class, new PrimitiveCharConverter());

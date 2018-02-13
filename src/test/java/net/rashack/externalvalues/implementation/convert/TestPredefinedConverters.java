@@ -25,6 +25,11 @@ public class TestPredefinedConverters {
 	}
 
 	@Test
+	public void testDoubleConverterPredefined() {
+		assertThat(PredefinedConverters.produce().forType(Double.class), instanceOf(DoubleConverter.class));
+	}
+
+	@Test
 	public void testFloatConverterPredefined() {
 		assertThat(PredefinedConverters.produce().forType(Float.class), instanceOf(FloatConverter.class));
 	}
@@ -52,6 +57,11 @@ public class TestPredefinedConverters {
 	@Test
 	public void testPrimitiveCharConverterPredefined() {
 		assertThat(PredefinedConverters.produce().forType(char.class), instanceOf(PrimitiveCharConverter.class));
+	}
+
+	@Test
+	public void testPrimitiveDoubleConverterPredefined() {
+		assertThat(PredefinedConverters.produce().forType(double.class), instanceOf(PrimitiveDoubleConverter.class));
 	}
 
 	@Test
