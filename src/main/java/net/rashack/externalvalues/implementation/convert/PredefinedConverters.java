@@ -12,6 +12,8 @@ public class PredefinedConverters {
 	private static Map<Class<?>, ExternalConverter<?>> defaults() {
 		final Map<Class<?>, ExternalConverter<?>> defaults = new HashMap<>();
 
+		defaults.put(Boolean.class, new BooleanConverter());
+		defaults.put(boolean.class, new PrimitiveBooleanConverter());
 		defaults.put(Byte.class, new ByteConverter());
 		defaults.put(byte.class, new PrimitiveByteConverter());
 		defaults.put(Short.class, new ShortConverter());

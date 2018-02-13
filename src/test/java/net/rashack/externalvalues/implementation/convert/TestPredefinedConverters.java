@@ -10,6 +10,11 @@ import net.rashack.externalvalues.exceptions.NoConverterException;
 public class TestPredefinedConverters {
 
 	@Test
+	public void testBooleanConverterPredefined() {
+		assertThat(PredefinedConverters.produce().forType(Boolean.class), instanceOf(BooleanConverter.class));
+	}
+
+	@Test
 	public void testByteConverterPredefined() {
 		assertThat(PredefinedConverters.produce().forType(Byte.class), instanceOf(ByteConverter.class));
 	}
@@ -22,6 +27,11 @@ public class TestPredefinedConverters {
 	@Test
 	public void testLongConverterPredefined() {
 		assertThat(PredefinedConverters.produce().forType(Long.class), instanceOf(LongConverter.class));
+	}
+
+	@Test
+	public void testPrimitiveBooleanConverterPredefined() {
+		assertThat(PredefinedConverters.produce().forType(boolean.class), instanceOf(PrimitiveBooleanConverter.class));
 	}
 
 	@Test
