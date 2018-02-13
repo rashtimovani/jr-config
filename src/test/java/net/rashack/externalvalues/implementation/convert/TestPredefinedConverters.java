@@ -49,6 +49,11 @@ public class TestPredefinedConverters {
 		assertThat(PredefinedConverters.produce().forType(Short.class), instanceOf(ShortConverter.class));
 	}
 
+	@Test
+	public void testStringConverterPredefined() {
+		assertThat(PredefinedConverters.produce().forType(String.class), instanceOf(StringConverter.class));
+	}
+
 	@Test(expected = NoConverterException.class)
 	public void testUnknownPredefinedType() {
 		PredefinedConverters.produce().forType(TestPredefinedConverters.class);

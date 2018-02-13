@@ -20,6 +20,7 @@ public class PredefinedConverters {
 		defaults.put(int.class, new PrimitiveIntConverter());
 		defaults.put(Long.class, new LongConverter());
 		defaults.put(long.class, new PrimitiveLongConverter());
+		defaults.put(String.class, new StringConverter());
 
 		return defaults;
 	}
