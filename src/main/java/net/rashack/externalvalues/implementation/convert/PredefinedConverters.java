@@ -14,7 +14,7 @@ public class PredefinedConverters {
 
 		defaults.put(Boolean.class, new BooleanConverter());
 		defaults.put(boolean.class, new PrimitiveBooleanConverter());
-		
+
 		defaults.put(Byte.class, new ByteConverter());
 		defaults.put(byte.class, new PrimitiveByteConverter());
 		defaults.put(Short.class, new ShortConverter());
@@ -23,7 +23,10 @@ public class PredefinedConverters {
 		defaults.put(int.class, new PrimitiveIntConverter());
 		defaults.put(Long.class, new LongConverter());
 		defaults.put(long.class, new PrimitiveLongConverter());
-		
+
+		defaults.put(Float.class, new FloatConverter());
+		defaults.put(float.class, new PrimitiveFloatConverter());
+
 		defaults.put(Character.class, new CharacterConverter());
 		defaults.put(char.class, new PrimitiveCharConverter());
 
