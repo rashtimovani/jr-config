@@ -5,10 +5,10 @@ import static org.hamcrest.Matchers.equalTo;
 
 import org.junit.Test;
 
-public class TestPrimitiveByteConverter {
+public class TestPrimitiveCharConverter {
 
 	@Test
-	public void testEmptyValueConvertsToZero() {
-		assertThat(new PrimitiveByteConverter().convert(""), equalTo((byte) 0));
+	public void testEmptyValueConvertsZeroChar() {
+		assertThat(new PrimitiveCharConverter().convert(""), equalTo('\u0000'));
 	}
 }

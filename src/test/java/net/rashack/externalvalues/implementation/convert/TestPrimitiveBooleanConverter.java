@@ -8,7 +8,7 @@ import org.junit.Test;
 public class TestPrimitiveBooleanConverter {
 
 	@Test
-	public void testDefaultValue() {
+	public void testEmptyConvertsToFalse() {
 		assertThat(new PrimitiveBooleanConverter().convert(""), equalTo(false));
 	}
 }
