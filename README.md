@@ -21,7 +21,17 @@ External objects are instantiated in following way:
 External<Integer> someExternalValue = Externals.typed(Integer.class).buildForKey("integerValue");
 ```
 This external will read integer specified in external resources under the key *integerValue*.
-All supported types for now are `Byte`, `Short`, `Integer` and `Long`, and their primitive types.
+All supported types for now are
+- `Boolean` (and primitive `boolean`)
+- `Byte` (and primitive `byte`)
+- `Short` (and primitive `short`)
+- `Integer` (and primitive `int`)
+- `Long` (and primitive `long`)
+- `Float` (and primitive `float`)
+- `Double` (and primitive `double`)
+- `Character` (and primitive `char`)
+- `String`
+- All `enum` types.
 
 Values in external resources are provided as strings,
 so if predefined types from above are not enough for you and you want to convert it in some special way,
